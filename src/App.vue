@@ -1,11 +1,19 @@
 <script>
-import ExampleName from "./components/ExampleName.vue";
+import AppHeader from "./components/AppHeader.vue";
+import AppSearch from "./components/main/AppSearch.vue";
+import CardsList from "./components/main/CardsList.vue";
+
+
+
 import { store } from "./store";
 import axios from "axios";
 
 export default {
   components: {
-    ExampleName,
+    AppHeader,
+    AppSearch,
+    CardsList,
+
   },
   data() {
     return {
@@ -13,12 +21,12 @@ export default {
     };
   },
   created() {
-    this.requestRandomMail();
+    this.requestCard();
   },
   methods: {
-    requestRandomMail() {
+    requestCard() {
       axios
-        .get("https://flynn.boolean.careers/exercises/api/random/mail")
+        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
         .then((result) => {
           store.randomMail = result.data.response;
         });
@@ -29,9 +37,8 @@ export default {
 
 <template>
   <h1>Hello World</h1>
-  <h2>{{ store.helloValue }}</h2>
-  <h3>axios request: {{ store.randomMail }}</h3>
-  <ExampleName />
+
+  <AppHeader />
 </template>
 
 <style lang="scss">
