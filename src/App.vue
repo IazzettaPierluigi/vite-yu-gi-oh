@@ -29,7 +29,7 @@ export default {
           console.log(result.data)
 
           //inserisco i dati del data nel mio array che è in storejs
-          store.allCards = result.data
+          store.allCards = result.data.data
         });
     },
   },
