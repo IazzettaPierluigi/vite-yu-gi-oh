@@ -13,32 +13,37 @@ export default {
     AppHeader,
     AppSearch,
     CardsList,
-
   },
   data() {
     return {
       store,
     };
   },
-  created() {
-    this.requestCard();
-  },
+
   methods: {
+    //questo è il method per fare la chiamata api
     requestCard() {
       axios
-        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-        .then((result) => {
-          store.randomMail = result.data.response;
+        .get(store.apiUrl)
+        .then(res => {
+          console.log(res.data)
         });
     },
   },
+
+  mounted() {
+    this.requestCard()
+  }
 };
 </script>
 
 <template>
-  <h1>Hello World</h1>
-
   <AppHeader />
+
+  <main>
+    <AppSearch />
+    <CardsList />
+  </main>
 </template>
 
 <style lang="scss">
