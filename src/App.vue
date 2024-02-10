@@ -25,15 +25,18 @@ export default {
     requestCard() {
       axios
         .get(store.apiUrl)
-        .then(res => {
-          console.log(res.data)
+        .then(result => {
+          console.log(result.data)
+
+          //inserisco i dati del data nel mio array che è in storejs
+          store.allCards = result.data
         });
     },
   },
 
   mounted() {
     this.requestCard()
-  }
+  },
 };
 </script>
 
