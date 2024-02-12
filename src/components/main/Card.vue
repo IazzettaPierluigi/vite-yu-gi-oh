@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-    width: calc(100% / 8 - (20px));
+    width: calc(100% / 6 - (20px));
     background-color: #d48f38;
 
     figure {

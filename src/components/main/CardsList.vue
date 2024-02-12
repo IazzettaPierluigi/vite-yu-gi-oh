@@ -1,6 +1,6 @@
 <template>
     <div id="select-input">
-        <label for="archetypeList">Select archetype:</label>
+
         <select id="archetypeList" v-model="store.selectValue">
             <option :value="element.archetype_name" v-for="(element, index) in store.arrayArchetype" :key="index">{{
                 element.archetype_name }}
@@ -38,7 +38,8 @@ export default {
 
 <style lang="scss" scoped>
 #select-input {
-    width: 60%;
+
+    width: 80%;
     margin: auto;
     margin-bottom: 10px;
 }
@@ -46,7 +47,7 @@ export default {
 h2 {
     background-color: black;
     color: white;
-    width: 60%;
+    width: 80%;
     margin: auto;
     font-size: 20px;
     padding: 5px;
@@ -56,10 +57,12 @@ h2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
 
-    width: 60%;
+    gap: 20px;
+    background-color: white;
+
+    width: 80%;
     margin: auto;
-    padding-bottom: 40px;
+    padding: 20px
 }
 </style>
