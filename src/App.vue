@@ -21,7 +21,7 @@ export default {
   },
 
   methods: {
-    //questo è il method per fare la chiamata api
+    //questo è il method per fare la chiamata api delle carte 
     requestCard() {
       axios
         .get(store.apiUrl)
@@ -32,10 +32,19 @@ export default {
           store.allCards = result.data.data
         });
     },
+    requestArchetype() {
+
+      axios.get(store.apiUrlArchetypes).then((res) => {
+        store.arrayArchetype = res.data
+      })
+    },
   },
 
+
   mounted() {
-    this.requestCard()
+    this.requestCard(),
+
+      this.requestArchetype()
   },
 };
 </script>

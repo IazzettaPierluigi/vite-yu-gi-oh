@@ -7,15 +7,7 @@ export default {
 </script>
 
 <template>
-  <h1>Hi I'm component</h1>
+  <h1>yu-gi-oh api</h1>
 </template>
 
-<style lang="scss" scoped>
-@use "../styles/partials/variables" as *;
-@use "../styles/partials/mixins" as *;
-
-h1 {
-  color: $font-color-second;
-  @include main-font-start;
-}
-</style>
+<style lang="scss" scoped></style>
