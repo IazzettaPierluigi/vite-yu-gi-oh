@@ -1,8 +1,9 @@
 <template>
     <div id="select-input">
         <label for="archetypeList">Select archetype:</label>
-        <select id="archetypeList" v-model="selectedCar">
-            <option value="" v-for="(element, index) in store.arrayArchetype" :key="index">{{ element.archetype_name }}
+        <select id="archetypeList" v-model="store.selectValue">
+            <option :value="element.archetype_name" v-for="(element, index) in store.arrayArchetype" :key="index">{{
+                element.archetype_name }}
             </option>
 
         </select>

@@ -23,6 +23,10 @@ export default {
   methods: {
     //questo è il method per fare la chiamata api delle carte 
     requestCard() {
+      store.apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=400&offset=0'
+      if (store.selectValue != '') {
+        store.apiUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.selectValue}`
+      }
       axios
         .get(store.apiUrl)
         .then(result => {
@@ -40,13 +44,13 @@ export default {
     },
   },
 
-
   mounted() {
-    this.requestCard(),
-
-      this.requestArchetype()
+    this.requestCard();
+    this.requestArchetype();
   },
-};
+}
+
+
 </script>
 
 <template>
