@@ -58,7 +58,7 @@ export default {
 
   <main>
     <AppSearch />
-    <CardsList />
+    <CardsList @performSearch="requestCard" />
   </main>
 </template>
 

@@ -7,6 +7,7 @@
             </option>
 
         </select>
+        <button @click.prevent="$emit('performSearch')">cerca</button>
 
     </div>
     <div>
